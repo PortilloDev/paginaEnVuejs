@@ -10,18 +10,9 @@
 </head>
 
 <body>
-    <div id="app">
-        <img v-bind:src="img" v-bind:alt="name">
-        <h1>
-            {{name}}
-            <span v-if="changePercent > 10"> 👍</span>
-            <span v-else-if="changePercent < 0"> 👎 </span>
-            <span v-else> 🤞 </span>
+    <div id="app" v-bind:style="{background: '#' + color}">
 
-            <span v-show="changePercent > 10"> 👍</span>
-            <span v-show="changePercent < 0"> 👎 </span>
-            <span v-show="changePercent == 0"> 🤞 </span>
-        </h1>
+        <coin-detail v-on:change-color="updateColor" v-bind:coin="btc"></coin-detail>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="app.js"></script>
