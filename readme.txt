@@ -8,3 +8,5 @@
   La directiva de Ford nos permite tirar sobre elementos en una raíz y es muy común el uso porque nos
   permite crear pequeños componentes, pequeños pedazos de temples que vamos a repetir a
   lo largo de nuestra vista en base a la cantidad elementos que tengamos en una raíz. 
+  
+  https://marozed.com/vue-cheatsheet/
