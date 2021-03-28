@@ -12,9 +12,19 @@
 <body>
     <div id="app" v-bind:style="{background: '#' + color}">
 
-        <coin-detail v-on:change-color="updateColor" v-bind:coin="btc"></coin-detail>
+        <coin-detail v-on:change-color="updateColor" v-bind:coin="btc">
+            <template v-slot:text>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+            </template>
+            <template v-slot:link>
+                <a href="https:\\ivan-portillo-perez.com" target="blanck">Link!</a>
+            </template>
+        </coin-detail>
+
+
+
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="app.js"></script>
 </body>
 

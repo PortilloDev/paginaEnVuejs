@@ -30,6 +30,14 @@ Vue.component('CoinDetail', {
         },
     },
 
+    created() {
+        console.log('created CoinDetail...');
+    },
+
+    mounted() {
+        console.log('mounted CoinDetail...');
+    },
+
     template: `
     <div>
         <img v-on:mouseover="toggleShowPrices" 
@@ -49,7 +57,8 @@ Vue.component('CoinDetail', {
 
         <input type="number" v-model="value">
         <span> {{ convertedValue }}</span>
- 
+        <slot name="text"></slot>
+        <slot name="link"></slot>
         <ul v-show=showPrices>
             <li v-bind:class="{ orange : p.value === coin.price, red : p.value < coin.price, green : p.value > coin.price }" v-for="(p, i) in coin.pricesWithDays" v-bind:key="p.day">
                 {{i}} - {{p.day}} - {{p.value}}
@@ -88,6 +97,14 @@ new Vue({
             color: 'f4f4f4',
 
         }
+    },
+
+    created() {
+        console.log('created...');
+    },
+
+    mounted() {
+        console.log('mounted...');
     },
 
     methods: {
